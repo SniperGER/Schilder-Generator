@@ -26,13 +26,14 @@ float blueValueMain;
     
     [aboutText setStringValue:@"Der Schilder-Generator wird von Sniper_GER und derKrahtz für Digital Frontier entwickelt. Die Windows-Version kommt von derKrahtz und erscheint in einem frischen Windows 8-Design, ehemals bekannt als Metro. Die Mac-Version wird von Sniper_GER entwickelt und enthält später sämtliche Funktionen, die in der Windows-Version zu finden sind, d.h. Menüs für Autobahn-, Ausfahrts- und Tankstellenschilder sowie eine integrierte Wiki mit Informationen über den Schilder-Generator selbst und zur deutschen Autobahn.\n\nIn diesen Menüs lernen Sie alles über die Funktionen und die Benutuzng des Schilder-Generators, sowie seine Entstehungsgeschichte.\n\nViel Spaß mit dem Schilder-Generator Mac.Edition wüschen ihnen"];
     
-    NSFont *regular = [NSFont fontWithName:@"AlteDIN1451Mittelschrift" size:30.0];
+    NSFont *regular = [NSFont fontWithName:@"AlteDIN1451Mittelschrift" size:25.0];
     [autobahn1Llabel setFont:regular];
     [autobahn2Llabel setFont:regular];
     [autobahn3Llabel setFont:regular];
 	[autobahn1Rlabel setFont:regular];
     [autobahn2Rlabel setFont:regular];
     [autobahn3Rlabel setFont:regular];
+	[exitDistanceLabel setFont:regular];
     [self performSelector:@selector(splashPretendLoading) withObject:nil afterDelay:2];
     [self sliderDidMove:self];
 }
@@ -45,6 +46,8 @@ float blueValueMain;
     [autobahn2Rbox setDelegate:self];
     [autobahn3Rbox setDelegate:self];
     [exitDistanceBox setDelegate:self];
+	[nextAutobahnValue setDelegate:self];
+	[exitAutobahnValue setDelegate:self];
 }
 - (void)controlTextDidChange:(NSNotification *)notification
 {
@@ -102,13 +105,33 @@ float blueValueMain;
             [autobahn3Rlabel setStringValue:boxValue];
         }
     }
+	if([notification object] == nextAutobahnValue)
+    {
+        NSString *boxValue = [nextAutobahnValue stringValue];
+        if ([boxValue length] == 0) {
+            [nextAutobahnLabelL setStringValue:@"999"];
+			[nextAutobahnLabelR setStringValue:@"999"];
+        } else {
+            [nextAutobahnLabelL setStringValue:boxValue];
+			[nextAutobahnLabelR setStringValue:boxValue];
+        }
+    }
     if([notification object] == exitDistanceBox)
     {
         NSString *boxValue = [exitDistanceBox stringValue];
         if ([boxValue length] == 0) {
-            [exitDistanceLabel setStringValue:@"000m"];
+            [exitDistanceLabel setStringValue:@"000 m"];
         } else {
             [exitDistanceLabel setStringValue:boxValue];
+        }
+    }
+	if([notification object] == exitAutobahnValue)
+    {
+        NSString *boxValue = [exitAutobahnValue stringValue];
+        if ([boxValue length] == 0) {
+            [exitAutobahnLabel setStringValue:@"000"];
+        } else {
+            [exitAutobahnLabel setStringValue:boxValue];
         }
     }
 }
@@ -165,7 +188,13 @@ float blueValueMain;
     [autobahn2Rlabel setStringValue:@"Ausfahrt 2"];
     [autobahn3Rlabel setStringValue:@"Ausfahrt 3"];
     
-    [exitDistanceLabel setStringValue:@"000m"];
+    [exitDistanceLabel setStringValue:@"000 m"];
+	[exitDistanceBox setStringValue:@""];
+	[exitAutobahnValue setStringValue:@""];
+	[exitAutobahnLabel setStringValue:@"000"];
+	[exitAutobahnLabel setHidden:false];
+	[exitAutobahnValueBG setHidden:false];
+	[exitAutobahnValue setEnabled:true];
     
     [autobahnBGBox setFillColor:[NSColor colorWithDeviceRed:(redValueMain / 255) green:(greenValueMain / 255) blue:(blueValueMain / 255) alpha:1.0]];
     [ausfahrtBGBox setFillColor:[NSColor colorWithDeviceRed:(redValueMain / 255) green:(greenValueMain / 255) blue:(blueValueMain / 255) alpha:1.0]];
@@ -196,19 +225,19 @@ float blueValueMain;
     [helpMenu setHidden:FALSE];
 }
 - (IBAction)sliderDidMove:(id)sender {
-    float redValue = [redSlider floatValue];
-    [redLabel setStringValue:[NSString stringWithFormat:@"%1.1f", redValue]];
-    
-    float greenValue = [greenSlider floatValue];
-    [greenLabel setStringValue:[NSString stringWithFormat:@"%1.1f", greenValue]];
-
-    float blueValue = [blueSlider floatValue];
-    [blueLabel setStringValue:[NSString stringWithFormat:@"%1.1f", blueValue]];
-
-    [autobahnBGBox setFillColor:[NSColor colorWithDeviceRed:(redValue / 255) green:(greenValue / 255) blue:(blueValue / 255) alpha:1.0]];
-    [ausfahrtBGBox setFillColor:[NSColor colorWithDeviceRed:(redValue / 255) green:(greenValue / 255) blue:(blueValue / 255) alpha:1.0]];
-    [tankstelleBGBox setFillColor:[NSColor colorWithDeviceRed:(redValue / 255) green:(greenValue / 255) blue:(blueValue / 255) alpha:1.0]];
-    [previewBox setFillColor:[NSColor colorWithDeviceRed:(redValue / 255) green:(greenValue / 255) blue:(blueValue / 255) alpha:1.0]];
+//    float redValue = [redSlider floatValue];
+//    [redLabel setStringValue:[NSString stringWithFormat:@"%1.1f", redValue]];
+//    
+//    float greenValue = [greenSlider floatValue];
+//    [greenLabel setStringValue:[NSString stringWithFormat:@"%1.1f", greenValue]];
+//
+//    float blueValue = [blueSlider floatValue];
+//    [blueLabel setStringValue:[NSString stringWithFormat:@"%1.1f", blueValue]];
+//
+//    [autobahnBGBox setFillColor:[NSColor colorWithDeviceRed:(redValue / 255) green:(greenValue / 255) blue:(blueValue / 255) alpha:1.0]];
+//    [ausfahrtBGBox setFillColor:[NSColor colorWithDeviceRed:(redValue / 255) green:(greenValue / 255) blue:(blueValue / 255) alpha:1.0]];
+//    [tankstelleBGBox setFillColor:[NSColor colorWithDeviceRed:(redValue / 255) green:(greenValue / 255) blue:(blueValue / 255) alpha:1.0]];
+//    [previewBox setFillColor:[NSColor colorWithDeviceRed:(redValue / 255) green:(greenValue / 255) blue:(blueValue / 255) alpha:1.0]];
 }
 - (IBAction)RGBBoxDidChange:(id)sender {
     float redValue = ([redLabel floatValue] / 255);
@@ -224,6 +253,17 @@ float blueValueMain;
     [ausfahrtBGBox setFillColor:[NSColor colorWithDeviceRed:redValue green:greenValue blue:blueValue alpha:1.0]];
     [tankstelleBGBox setFillColor:[NSColor colorWithDeviceRed:redValue green:greenValue blue:blueValue alpha:1.0]];
     [previewBox setFillColor:[NSColor colorWithDeviceRed:redValue green:greenValue blue:blueValue alpha:1.0]];
+}
+- (IBAction)nextAutobahnChange:(id)sender {
+	if ([exitAutobahnActivated state] == NSOnState) {
+		[exitAutobahnLabel setHidden:false];
+		[exitAutobahnValueBG setHidden:false];
+		[exitAutobahnValue setEnabled:false];
+	} else if ([exitAutobahnActivated state] == NSOffState) {
+		[exitAutobahnLabel setHidden:true];
+		[exitAutobahnValueBG setHidden:true];
+		[exitAutobahnValue setEnabled:false];
+	}
 }
 - (IBAction)test:(id)sender {
 [signBox lockFocus];

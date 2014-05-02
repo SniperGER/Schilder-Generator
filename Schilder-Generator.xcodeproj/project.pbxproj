@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D5D93021914432900ECF17B /* autobahn_sign1_short.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D5D93011914432900ECF17B /* autobahn_sign1_short.png */; };
 		8D601E94180AD784009F5276 /* symbol.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8D601E93180AD784009F5276 /* symbol.icns */; };
 		8D6F2E84180BF15D00CFC2B8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F2E82180BF15D00CFC2B8 /* Credits.rtf */; };
 		8D6F2E8D180C103500CFC2B8 /* autobahn_sign2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F2E8C180C103500CFC2B8 /* autobahn_sign2.png */; };
@@ -17,6 +18,7 @@
 		8D9C9BF21806A776007DDD79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C9BF11806A776007DDD79 /* AppDelegate.m */; };
 		8D9C9BF51806A777007DDD79 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9C9BF31806A777007DDD79 /* MainMenu.xib */; };
 		8D9C9C141806AC1C007DDD79 /* logo_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9C9C131806AC1C007DDD79 /* logo_new.png */; };
+		8DA6524019143A74009F4B95 /* autobahn_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA6523F19143A74009F4B95 /* autobahn_sign.png */; };
 		8DBD1ADA1806F62F006C565F /* din1451alt.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DBD1AD91806F62F006C565F /* din1451alt.ttf */; };
 		8DBD63C8180808D100BDCC91 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD63C7180808D100BDCC91 /* splash.png */; };
 		8DBD63CD1808195A00BDCC91 /* backgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD63CC1808195A00BDCC91 /* backgroundView.m */; };
@@ -37,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8D5D93011914432900ECF17B /* autobahn_sign1_short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = autobahn_sign1_short.png; path = signs/autobahn_sign1_short.png; sourceTree = "<group>"; };
 		8D601E93180AD784009F5276 /* symbol.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = symbol.icns; sourceTree = "<group>"; };
 		8D6F2E83180BF15D00CFC2B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		8D6F2E8C180C103500CFC2B8 /* autobahn_sign2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = autobahn_sign2.png; path = signs/autobahn_sign2.png; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		8D9C9C071806A777007DDD79 /* Schilder_GeneratorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Schilder_GeneratorTests.h; sourceTree = "<group>"; };
 		8D9C9C081806A777007DDD79 /* Schilder_GeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Schilder_GeneratorTests.m; sourceTree = "<group>"; };
 		8D9C9C131806AC1C007DDD79 /* logo_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_new.png; sourceTree = "<group>"; };
+		8DA6523F19143A74009F4B95 /* autobahn_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autobahn_sign.png; sourceTree = "<group>"; };
 		8DBD1AD91806F62F006C565F /* din1451alt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = din1451alt.ttf; sourceTree = "<group>"; };
 		8DBD63C7180808D100BDCC91 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		8DBD63CB1808195A00BDCC91 /* backgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = backgroundView.h; path = ../backgroundView.h; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 		8D6F2E86180C0C9800CFC2B8 /* Autobahn */ = {
 			isa = PBXGroup;
 			children = (
+				8DA6523F19143A74009F4B95 /* autobahn_sign.png */,
+				8D5D93011914432900ECF17B /* autobahn_sign1_short.png */,
 				8D6F2E8E180C112300CFC2B8 /* autobahn_sign1.png */,
 				8D6F2E8C180C103500CFC2B8 /* autobahn_sign2.png */,
 			);
@@ -139,9 +145,9 @@
 		8D9C9BE41806A776007DDD79 /* Schilder-Generator */ = {
 			isa = PBXGroup;
 			children = (
+				8D9C9BF31806A777007DDD79 /* MainMenu.xib */,
 				8D9C9BF01806A776007DDD79 /* AppDelegate.h */,
 				8D9C9BF11806A776007DDD79 /* AppDelegate.m */,
-				8D9C9BF31806A777007DDD79 /* MainMenu.xib */,
 				8DBD63CB1808195A00BDCC91 /* backgroundView.h */,
 				8DBD63CC1808195A00BDCC91 /* backgroundView.m */,
 				8D9C9BE51806A776007DDD79 /* Supporting Files */,
@@ -252,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D5D93021914432900ECF17B /* autobahn_sign1_short.png in Resources */,
 				8D9C9BE91806A776007DDD79 /* InfoPlist.strings in Resources */,
 				8D9C9BF51806A777007DDD79 /* MainMenu.xib in Resources */,
 				8D9C9C141806AC1C007DDD79 /* logo_new.png in Resources */,
@@ -261,6 +268,7 @@
 				8D6F2E84180BF15D00CFC2B8 /* Credits.rtf in Resources */,
 				8D6F2E8D180C103500CFC2B8 /* autobahn_sign2.png in Resources */,
 				8D6F2E8F180C112300CFC2B8 /* autobahn_sign1.png in Resources */,
+				8DA6524019143A74009F4B95 /* autobahn_sign.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

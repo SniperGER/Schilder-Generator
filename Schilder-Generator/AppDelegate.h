@@ -30,6 +30,11 @@ extern float blueValueMain;
     IBOutlet NSTextField *autobahn2Rlabel; IBOutlet NSTextField *autobahn2Rbox;
     IBOutlet NSTextField *autobahn3Rlabel; IBOutlet NSTextField *autobahn3Rbox;
     IBOutlet NSTextField *exitDistanceLabel; IBOutlet NSTextField *exitDistanceBox;
+	
+	IBOutlet NSTextField *nextAutobahnLabelL; IBOutlet NSTextField *nextAutobahnLabelR; IBOutlet NSTextField *nextAutobahnValue;
+	IBOutlet NSTextField *exitAutobahnLabel; IBOutlet NSTextField *exitAutobahnValue; IBOutlet NSImageView *exitAutobahnValueBG;
+	
+	IBOutlet NSButton *exitAutobahnActivated;
     
     IBOutlet NSWindow *mainWindow;
     IBOutlet NSWindow *splashWindow;
@@ -71,6 +76,8 @@ extern float blueValueMain;
 
 - (IBAction)sliderDidMove:(id)sender;
 - (IBAction)RGBBoxDidChange:(id)sender;
+
+- (IBAction)nextAutobahnChange:(id)sender;
 
 - (IBAction)test:(id)sender;
 @end
